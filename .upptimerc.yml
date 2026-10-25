@@ -1,31 +1,40 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# AKIN Travel public status page — https://status.akintravel.com
+# Runbook: https://github.com/akin-travel/akin-online/blob/develop/docs/runbooks/status-page.md
+# (akin-travel/issues#1675). This repo is public: never add a URL that carries a key or a token.
+owner: akin-travel
+repo: status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: API
+    url: https://api.akintravel.com/health
+    expectedStatusCodes:
+      - 200
+  - name: Website
+    url: https://akintravel.com/en
+    expectedStatusCodes:
+      - 200
+  - name: Dashboard
+    url: https://admin.akintravel.com/en/login
+    expectedStatusCodes:
+      - 200
+  - name: White-label
+    url: https://drifter.akintravel.com/en/login
+    expectedStatusCodes:
+      - 200
+  - name: Sandbox API
+    url: https://sandbox.akintravel.com/health
+    expectedStatusCodes:
+      - 200
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.akintravel.com
+  logoUrl: https://raw.githubusercontent.com/akin-travel/status/master/assets/akin-logo-mark.svg
+  favicon: https://raw.githubusercontent.com/akin-travel/status/master/assets/akin-logo-mark.svg
+  name: AKIN Travel status
+  introTitle: "**AKIN Travel** platform status"
+  introMessage: Live status of the AKIN Travel API, website, dashboard, partner sites and sandbox. Each check runs every 5 minutes from outside our own infrastructure.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: Developer docs
+      href: https://developers.akintravel.com
